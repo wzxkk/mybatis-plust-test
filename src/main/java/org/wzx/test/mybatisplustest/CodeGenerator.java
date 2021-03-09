@@ -1,10 +1,12 @@
 package org.wzx.test.mybatisplustest;
 
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.file.FileReader;
 import cn.hutool.core.io.file.FileWriter;
 import cn.hutool.core.util.ClassUtil;
 import cn.hutool.setting.dialect.Props;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
+import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
@@ -15,6 +17,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author: 鱼头
@@ -134,16 +138,15 @@ public class CodeGenerator {
         autoGenerator.setStrategy(strategyConfig);
 
         // 自定义变量，模版里就能引用
-//        InjectionConfig injectionConfig = new InjectionConfig() {
-//            @Override
-//            public void initMap() {
-//                Map<String, Object> map = new HashMap<>();
-//                map.put("baseControllerImport" , packageConfig.getParent() + ".controller.base.BaseController" );
-//                map.put("time" , DateUtil.format(new Date(),"HH:mm"));
-//                this.setMap(map);
-//            }
-//        };
-//        autoGenerator.setCfg(injectionConfig);
+        InjectionConfig injectionConfig = new InjectionConfig() {
+            @Override
+            public void initMap() {
+                Map<String, Object> map = new HashMap<>();
+                map.put("port", "60000");
+                this.setMap(map);
+            }
+        };
+        autoGenerator.setCfg(injectionConfig);
 
         // 配置各个模板
         TemplateConfig templateConfig = new TemplateConfig();
