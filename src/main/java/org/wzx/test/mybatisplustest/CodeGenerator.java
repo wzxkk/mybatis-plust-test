@@ -30,8 +30,7 @@ public class CodeGenerator {
         //填写要生成的表名
         String[] table = null;
         table = new String[]{"user_key"};
-        table = new String[]{"trade_type", "bourse_info", "currency_info", "entrust_type", "bourse_trade"};
-//        table = new String[]{"entrust_type"};
+        table = new String[]{"user_key", "trade_type", "bourse_info", "currency_info", "entrust_type", "bourse_trade"};
 
         //创建生成器及获取项目基础信息
         AutoGenerator autoGenerator = new AutoGenerator();
