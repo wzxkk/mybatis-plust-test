@@ -49,7 +49,7 @@ public class MyConfig implements MetaObjectHandler {
                 .apiInfo(new ApiInfoBuilder()
                         .title("交易所API接口文档")
                         .description("文档随时有变动，请多多关注")
-                        .contact(new Contact("鱼头", "http://" + SystemUtil.getHostInfo().getAddress() + ":60000/swagger-ui.html", "377322994@qq.com"))
+                        .contact(new Contact("鱼头", "https://github.com/wzxkk/mybatis-plust-test", "377322994@qq.com"))
                         .version("0.0.1")
                         .build())
                 .select()
